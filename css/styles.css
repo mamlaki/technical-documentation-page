@@ -4,6 +4,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -12,11 +13,47 @@ body {
     font-family: Helvetica, Arial, sans-serif;
 }
 
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5rem;
+}
+
 nav header {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 5rem 0;
+    margin: 4rem 0;
+    text-align: center;
+    border: 5px solid var(--js-yellow);
+    border-radius: 0.9rem;
+    height: 2rem;
+    overflow: scroll;
+}
+
+nav ul li,
+section {
+    margin-bottom: 4rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    border: 3px solid var(--js-yellow);
+    border-radius: 0.9rem;
+    padding: 1.2rem;
+}
+
+nav ul li a:hover {
+    background-color: var(--js-yellow);
+    color: white;
+    border: none;
 }
 
 .js-logo {
@@ -29,15 +66,64 @@ header h1 a {
     color: black;
 }
 
-.hamburger-menu {
-    width: 3.4rem;
-}
-
-.hamburger-menu:hover {
-    cursor: pointer;
-    fill: var(--js-yellow);
-}
-
 section header {
     font-size: 2.4rem;
+    text-align: center;
+}
+
+hr {
+    border: 1px solid var(--js-yellow);
+}
+
+nav ul hr {
+    display: none;
+}
+
+section code {
+    display: block;
+    background-color: #f1f1f1;
+    padding: 3rem;
+    font-family: 'Titillium Web', sans-serif;
+    line-height: 2;
+}
+
+@media (min-width: 768px) 
+{
+    .flex-container {
+        flex-direction: row;
+        margin: 0 auto;
+        gap: 6rem;
+        max-width: 120rem;
+    }
+
+    nav ul {
+        height: 70vh;
+        margin: 0;
+        position: sticky;
+        overflow-y: scroll;
+        top: 0;
+    }
+
+    nav ul,
+    nav ul li a {
+        border: none;
+    }
+
+    nav ul hr {
+        display: block;
+    }
+
+    nav ul li {
+        margin: 3rem 0;
+    }
+
+    nav ul li a {
+        font-size: 1.8rem;
+    }
+
+    nav ul li a:hover {
+        background: none;
+        color: black;
+        text-decoration: underline;
+    }
 }
